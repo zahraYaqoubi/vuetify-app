@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-main>
+      <v-subheader class="font-weight-bold">Shift template 1</v-subheader>
+      <v-row>
+        <v-col cols="12" md="7">
+          <LeftSide />
+        </v-col>
+        <v-col cols="12" md="5">
+          <RightSide />
+        </v-col>
+      </v-row>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LeftSide from "./components/LeftSide";
+import RightSide from "./components/RightSide";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: "App",
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  components: {
+    LeftSide,
+    RightSide
+  },
+
+  data: () => ({
+    //
+  })
+};
+</script>
+<style scoped>
+::v-deep .v-label {
+    font-size: 12px !important;
+}
+::v-deep .v-text-field--outlined fieldset {
+    border: 2px solid #c5c5c5 !important;
+}
+.v-row{
+  height: 100%;
 }
 </style>
